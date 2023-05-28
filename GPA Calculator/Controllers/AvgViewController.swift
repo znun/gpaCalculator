@@ -9,6 +9,8 @@ import UIKit
 
 class AvgViewController: UIViewController {
     
+    @IBOutlet weak var newStorkBtn: UIButton!
+    
     var avgType: Int = 4
     
     override func viewDidLoad() {
@@ -23,6 +25,7 @@ class AvgViewController: UIViewController {
         }
         
         configureNavigationIcon()
+       // newStorkBtn.addTarget(self, action: #selector(tapNewStork), for: .touchUpInside)
         
     }
     
@@ -41,4 +44,21 @@ class AvgViewController: UIViewController {
         
     }
     
+    @IBAction func newStorkPressed(_ sender: Any) {
+        let vc = UIStoryboard(name: "Main", bundle: nil)
+        guard let controller = vc.instantiateViewController(withIdentifier: "CalculationViewController") as? CalculationViewController else {
+            return
+        }
+        
+        self.navigationController?.pushViewController(controller, animated: true)
+        
+    }
+    
+//    @objc func tapNewStork() {
+//        let vc = UIStoryboard(name: "Main", bundle: nil)
+//        guard let controller = vc.instantiateViewController(withIdentifier: "CalculationViewController") as? CalculationViewController else {
+//            return
+//        }
+//
+//    }
 }
