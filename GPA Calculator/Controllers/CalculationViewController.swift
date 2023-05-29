@@ -89,6 +89,24 @@ class CalculationViewController: UIViewController, UITableViewDelegate , UITable
             cell.tapForPlus = {
                 self.configureTable()
             }
+            
+            cell.tapForHour = {
+                let vc = UIStoryboard(name: "Main", bundle: nil)
+                guard let controller = vc.instantiateViewController(withIdentifier: "ValueSelectionController") as? ValueSelectionController else {
+                    return
+                }
+                controller.isGrade = false
+                self.navigationController?.pushViewController(controller, animated: true)
+            }
+            
+            cell.tapForGrade = {
+                let vc = UIStoryboard(name: "Main", bundle: nil)
+                guard let controller = vc.instantiateViewController(withIdentifier: "ValueSelectionController") as? ValueSelectionController else {
+                    return
+                }
+                controller.isGrade = true
+                self.navigationController?.pushViewController(controller, animated: true)
+            }
             return cell
         }
       

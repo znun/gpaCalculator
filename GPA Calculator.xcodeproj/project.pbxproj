@@ -14,9 +14,10 @@
 		CE25A1D12A1BAD9000D28191 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE25A1D02A1BAD9000D28191 /* Assets.xcassets */; };
 		CE25A1D42A1BAD9000D28191 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE25A1D22A1BAD9000D28191 /* LaunchScreen.storyboard */; };
 		CE78FBB02A1F702A00D01ED5 /* AvgViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78FBAF2A1F702900D01ED5 /* AvgViewController.swift */; };
-		CE8346EE2A23643700A395CF /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8346ED2A23643600A395CF /* Models.swift */; };
 		CE99A62A2A1E52140023FFE4 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE99A6292A1E52140023FFE4 /* SettingViewController.swift */; };
 		CE99F5432A24828400E3D675 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE99F5422A24828400E3D675 /* Utils.swift */; };
+		CE99F5452A24874300E3D675 /* ValueSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE99F5442A24874300E3D675 /* ValueSelectionController.swift */; };
+		CE99F5472A24890100E3D675 /* Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE99F5462A24890100E3D675 /* Grade.swift */; };
 		CE9FB7F92A22139B002FDBC1 /* CalculationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9FB7F82A22139B002FDBC1 /* CalculationViewController.swift */; };
 		CE9FB7FB2A2217A9002FDBC1 /* CalculationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9FB7FA2A2217A9002FDBC1 /* CalculationCell.swift */; };
 /* End PBXBuildFile section */
@@ -31,9 +32,10 @@
 		CE25A1D32A1BAD9000D28191 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE25A1D52A1BAD9000D28191 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE78FBAF2A1F702900D01ED5 /* AvgViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvgViewController.swift; sourceTree = "<group>"; };
-		CE8346ED2A23643600A395CF /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		CE99A6292A1E52140023FFE4 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		CE99F5422A24828400E3D675 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		CE99F5442A24874300E3D675 /* ValueSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueSelectionController.swift; sourceTree = "<group>"; };
+		CE99F5462A24890100E3D675 /* Grade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grade.swift; sourceTree = "<group>"; };
 		CE9FB7F82A22139B002FDBC1 /* CalculationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationViewController.swift; sourceTree = "<group>"; };
 		CE9FB7FA2A2217A9002FDBC1 /* CalculationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +107,7 @@
 				CE99A6292A1E52140023FFE4 /* SettingViewController.swift */,
 				CE78FBAF2A1F702900D01ED5 /* AvgViewController.swift */,
 				CE9FB7F82A22139B002FDBC1 /* CalculationViewController.swift */,
+				CE99F5442A24874300E3D675 /* ValueSelectionController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -112,7 +115,7 @@
 		CE99A6282A1E50C60023FFE4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CE8346ED2A23643600A395CF /* Models.swift */,
+				CE99F5462A24890100E3D675 /* Grade.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -188,13 +191,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE99F5452A24874300E3D675 /* ValueSelectionController.swift in Sources */,
 				CE25A1CC2A1BAD8D00D28191 /* HomeController.swift in Sources */,
 				CE78FBB02A1F702A00D01ED5 /* AvgViewController.swift in Sources */,
 				CE99F5432A24828400E3D675 /* Utils.swift in Sources */,
 				CE25A1C82A1BAD8D00D28191 /* AppDelegate.swift in Sources */,
-				CE8346EE2A23643700A395CF /* Models.swift in Sources */,
 				CE25A1CA2A1BAD8D00D28191 /* SceneDelegate.swift in Sources */,
 				CE9FB7F92A22139B002FDBC1 /* CalculationViewController.swift in Sources */,
+				CE99F5472A24890100E3D675 /* Grade.swift in Sources */,
 				CE9FB7FB2A2217A9002FDBC1 /* CalculationCell.swift in Sources */,
 				CE99A62A2A1E52140023FFE4 /* SettingViewController.swift in Sources */,
 			);

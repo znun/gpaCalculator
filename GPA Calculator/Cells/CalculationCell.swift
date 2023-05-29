@@ -47,11 +47,15 @@ class CalculationCell: UITableViewCell {
     
     
     @objc func tapHour() {
-        
+        if let tap = tapForHour {
+            tap()
+        }
     }
     
     @objc func tapGrade() {
-        
+        if let tap = tapForGrade {
+            tap()
+        }
     }
     
     @objc func tapPlus() {
@@ -61,7 +65,9 @@ class CalculationCell: UITableViewCell {
     }
     
     @objc func tapCalculate() {
-        
+        if let tap = tapForCalculate {
+            tap()
+        }
     }
     
 //    @IBAction func hourBtnPressed(_ sender: Any) {
