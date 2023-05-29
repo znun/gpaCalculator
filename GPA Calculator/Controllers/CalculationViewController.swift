@@ -21,12 +21,17 @@ class CalculationViewController: UIViewController, UITableViewDelegate , UITable
         super.viewDidLoad()
         self.navigationItem.title = "New Stork"
        
+        self.TapToHideKeyboard()
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.tableFooterView = UIView()
         self.tableView.separatorStyle = .none
         
         configureTable()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWilHide), name: UIResponder.keyboardDidHideNotification, object: nil)
     }
     
     func configureTable() {
@@ -39,7 +44,22 @@ class CalculationViewController: UIViewController, UITableViewDelegate , UITable
         
     }
     
+    var isScrolled : Bool = false
     
+    @objc func keyboardWillShow(_ notification : NSNotification) {
+        if !self.isScrolled {
+            self.tableView.contentSize = CGSize(width: 0, height: self.tableView.contentSize.height + 300.0)
+            self.isScrolled = true
+        }
+    }
+    
+    
+    @objc func keyboardWilHide(_ notification : NSNotification) {
+       
+            self.tableView.contentSize = CGSize(width: 0, height: self.tableView.contentSize.height - 300.0)
+            self.isScrolled = true
+        
+    }
     
     
     
