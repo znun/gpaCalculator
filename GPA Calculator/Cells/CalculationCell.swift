@@ -9,6 +9,7 @@ import UIKit
 
 class CalculationCell: UITableViewCell {
 
+
     @IBOutlet weak var nameTxt: UITextField!
     @IBOutlet weak var hourBtn: UIButton!
     @IBOutlet weak var gradeBtn: UIButton!
@@ -33,7 +34,19 @@ class CalculationCell: UITableViewCell {
     var tapForCalculate : (() -> Void)? = nil
     
     func setData(model : Grade) {
-        nameTxt.text = model.name
+        nameTxt.text = model.name!
+        
+        if model.hour == nil {
+            hourBtn.setTitle("Hour", for: .normal)
+        } else {
+            hourBtn.setTitle("\(model.hour!)  Hours", for: .normal)
+        }
+        
+        if model.grade == nil {
+            gradeBtn.setTitle("Grade", for: .normal)
+        } else {
+            gradeBtn.setTitle("\(model.grade!)  Grade", for: .normal)
+        }
         
         hourBtn.addTarget(self, action: #selector(tapHour), for: .touchUpInside)
         gradeBtn.addTarget(self, action: #selector(tapGrade), for: .touchUpInside)

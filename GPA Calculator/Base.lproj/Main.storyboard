@@ -390,7 +390,7 @@
                                         <connections>
                                             <outlet property="gradeBtn" destination="Icj-ys-0P4" id="fBs-UU-n5v"/>
                                             <outlet property="hourBtn" destination="GGi-ov-OQs" id="ulv-eY-tZF"/>
-                                            <outlet property="nameTxt" destination="HeM-Am-zCc" id="ugn-ty-sde"/>
+                                            <outlet property="nameTxt" destination="HeM-Am-zCc" id="hqe-7h-oC1"/>
                                             <outlet property="plusBtn" destination="HC2-7B-Kjl" id="tzc-kd-x6W"/>
                                         </connections>
                                     </tableViewCell>
@@ -448,7 +448,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hdb-3K-0S7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1548.854961832061" y="757.74647887323943"/>
+            <point key="canvasLocation" x="1506" y="763"/>
         </scene>
         <!--Value Selection Controller-->
         <scene sceneID="Fjz-eA-FJa">

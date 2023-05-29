@@ -11,17 +11,19 @@ class ValueSelectionController: UITableViewController {
     
     var isGrade : Bool = false
     var list: [Grade] = [Grade]()
+    var selectedString : String?
+    var delegate : CallBack?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configueValue()
+        configureValue()
         
         self.tableView.separatorStyle = .none
         self.tableView.tableFooterView = UIView()
     }
     
-    func configueValue() {
+    func configureValue() {
         self.list.removeAll()
         if isGrade {
             self.navigationItem.title = "Select Grade"
@@ -62,6 +64,9 @@ class ValueSelectionController: UITableViewController {
                 else if i == 11 {
                     model.name = "F"
                 }
+                if selectedString != nil && model.name == selectedString! {
+                    model.checked = true
+                }
                 list.append(model)
             }
           
@@ -94,6 +99,15 @@ class ValueSelectionController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = list[indexPath.row].name!
+        if list[indexPath.row].checked {
+            tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+        }
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+        delegate?.callBack(str: list[indexPath.row].name!)
+        self.navigationController?.popViewController(animated: true)
     }
 }

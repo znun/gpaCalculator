@@ -7,14 +7,18 @@
 
 import UIKit
 
-class CalculationViewController: UIViewController, UITableViewDelegate , UITableViewDataSource{
+class CalculationViewController: UIViewController, UITableViewDelegate , UITableViewDataSource, CallBack{
 
     //@IBOutlet weak var ads: UIView!
    // @IBOutlet weak var nameLbl: UILabel!
-    //@IBOutlet weak var nameTxt: UITextField!
+ 
+
+   
     @IBOutlet weak var tableView: UITableView!
     
     var avgType: Int = 4
+    var isGrade: Bool = false
+    var indexPath: IndexPath?
     var list: [Grade] = [Grade]()
     
     override func viewDidLoad() {
@@ -64,8 +68,7 @@ class CalculationViewController: UIViewController, UITableViewDelegate , UITable
     
     
     
-    
-    
+    //MARK: - TableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return list.count + 1
@@ -91,20 +94,34 @@ class CalculationViewController: UIViewController, UITableViewDelegate , UITable
             }
             
             cell.tapForHour = {
+                self.list[indexPath.row].name = cell.nameTxt.text!
+                self.indexPath = indexPath
+                self.isGrade = false
                 let vc = UIStoryboard(name: "Main", bundle: nil)
                 guard let controller = vc.instantiateViewController(withIdentifier: "ValueSelectionController") as? ValueSelectionController else {
                     return
                 }
-                controller.isGrade = false
+                if self.list[indexPath.row].hour != nil {
+                    controller.selectedString = self.list[indexPath.row].hour!
+                }
+                controller.delegate = self
+                controller.isGrade = self.isGrade
                 self.navigationController?.pushViewController(controller, animated: true)
             }
             
             cell.tapForGrade = {
+                self.list[indexPath.row].name = cell.nameTxt.text!
+                self.indexPath = indexPath
+                self.isGrade = true
                 let vc = UIStoryboard(name: "Main", bundle: nil)
                 guard let controller = vc.instantiateViewController(withIdentifier: "ValueSelectionController") as? ValueSelectionController else {
                     return
                 }
-                controller.isGrade = true
+                if self.list[indexPath.row].grade != nil {
+                    controller.selectedString = self.list[indexPath.row].grade!
+                }
+                controller.delegate = self
+                controller.isGrade = self.isGrade
                 self.navigationController?.pushViewController(controller, animated: true)
             }
             return cell
@@ -124,5 +141,13 @@ class CalculationViewController: UIViewController, UITableViewDelegate , UITable
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    func callBack(str: String) {
+        if isGrade {
+            list[self.indexPath!.row].grade = str
+        } else {
+            list[self.indexPath!.row].hour = str
+        }
+        tableView.reloadRows(at: [self.indexPath!], with: .none)
+    }
 }
-

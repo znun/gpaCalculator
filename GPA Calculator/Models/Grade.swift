@@ -10,4 +10,6 @@ class Grade: Codable {
     var id: String?
     var name: String?
     var checked: Bool = false
+    var hour : String?
+    var grade : String?
 }
