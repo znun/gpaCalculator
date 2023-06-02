@@ -12,7 +12,7 @@ class ValueSelectionController: UITableViewController {
     var isGrade : Bool = false
     var list: [Grade] = [Grade]()
     var selectedString : String?
-    var delegate : CallBack?
+    var delegate : ValueSelectionDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,38 +31,50 @@ class ValueSelectionController: UITableViewController {
                 let model = Grade()
                 model.id = "\(i)"
                 if i == 0 {
-                    model.name = "A"
+                    model.name = GradeIndicator.A
+                    model.point = GradePoints.A
                 } else if i == 1 {
-                    model.name = "A-"
+                    model.name = GradeIndicator.A_M
+                    model.point = GradePoints.A_M
                 } else if i == 2 {
-                    model.name = "B+"
+                    model.name = GradeIndicator.B_P
+                    model.point = GradePoints.B_P
                 }
                 else if i == 3 {
-                    model.name = "B"
+                    model.name = GradeIndicator.B
+                    model.point = GradePoints.B_M
                 }
                 else if i == 4 {
-                    model.name = "B-"
+                    model.name = GradeIndicator.B_M
+                    model.point = GradePoints.B_M
                 }
                 else if i == 5 {
-                    model.name = "C+"
+                    model.name = GradeIndicator.C_P
+                    model.point = GradePoints.C_P
                 }
                 else if i == 6 {
-                    model.name = "C"
+                    model.name = GradeIndicator.C
+                    model.point = GradePoints.C
                 }
                 else if i == 7 {
-                    model.name = "C-"
+                    model.name = GradeIndicator.C_M
+                    model.point = GradePoints.C_M
                 }
                 else if i == 8 {
-                    model.name = "D+"
+                    model.name = GradeIndicator.D_P
+                    model.point = GradePoints.D_P
                 }
                 else if i == 9 {
-                    model.name = "D"
+                    model.name = GradeIndicator.D
+                    model.point = GradePoints.D
                 }
                 else if i == 10 {
-                    model.name = "D-"
+                    model.name = GradeIndicator.D_M
+                    model.point = GradePoints.D_M
                 }
                 else if i == 11 {
-                    model.name = "F"
+                    model.name = GradeIndicator.F
+                    model.point = GradePoints.F
                 }
                 if selectedString != nil && model.name == selectedString! {
                     model.checked = true
@@ -107,7 +119,7 @@ class ValueSelectionController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
-        delegate?.callBack(str: list[indexPath.row].name!)
+        delegate?.callBack(str: list[indexPath.row].name! , point: list[indexPath.row].point)
         self.navigationController?.popViewController(animated: true)
     }
 }

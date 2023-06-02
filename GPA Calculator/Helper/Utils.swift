@@ -20,3 +20,33 @@ extension UIViewController {
         self.view.endEditing(true)
     }
 }
+
+struct GradePoints {
+    static var A = 4.00
+    static var A_M = 3.70
+    static var B_P = 3.33
+    static var B = 3.00
+    static var B_M = 2.70
+    static var C_P = 2.30
+    static var C = 2.00
+    static var C_M = 1.70
+    static var D_P = 1.30
+    static var D = 1.00
+    static var D_M = 0.70
+    static var F = 0.59
+}
+
+struct GradeIndicator {
+    static var A = "A"
+    static var A_M = "A-"
+    static var B_P = "B+"
+    static var B = "B"
+    static var B_M = "B-"
+    static var C_P = "C+"
+    static var C = "C"
+    static var C_M = "C-"
+    static var D_P = "D+"
+    static var D = "D"
+    static var D_M = "D-"
+    static var F = "F"
+}

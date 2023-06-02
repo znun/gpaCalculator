@@ -12,4 +12,5 @@ class Grade: Codable {
     var checked: Bool = false
     var hour : String?
     var grade : String?
+    var point = 0.0
 }

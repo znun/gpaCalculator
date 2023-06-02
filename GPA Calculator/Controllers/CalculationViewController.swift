@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CalculationViewController: UIViewController, UITableViewDelegate , UITableViewDataSource, CallBack{
+class CalculationViewController: UIViewController, UITableViewDelegate , UITableViewDataSource, ValueSelectionDelegate{
 
     //@IBOutlet weak var ads: UIView!
    // @IBOutlet weak var nameLbl: UILabel!
@@ -52,7 +52,7 @@ class CalculationViewController: UIViewController, UITableViewDelegate , UITable
     
     @objc func keyboardWillShow(_ notification : NSNotification) {
         if !self.isScrolled {
-            self.tableView.contentSize = CGSize(width: 0, height: self.tableView.contentSize.height + 300.0)
+            self.tableView.contentSize = CGSize(width: 0, height: self.tableView.contentSize.height + 270.0)
             self.isScrolled = true
         }
     }
@@ -60,11 +60,30 @@ class CalculationViewController: UIViewController, UITableViewDelegate , UITable
     
     @objc func keyboardWilHide(_ notification : NSNotification) {
        
-            self.tableView.contentSize = CGSize(width: 0, height: self.tableView.contentSize.height - 300.0)
+            self.tableView.contentSize = CGSize(width: 0, height: self.tableView.contentSize.height - 270.0)
             self.isScrolled = true
         
     }
     
+    func calculateResult() {
+        let totalRows = tableView.numberOfRows(inSection: 0)
+        var sumOfHours : Double = 0.0
+        var sumOfPoints : Double = 0.0
+        for row in 0..<totalRows {
+            print("row \(row)")
+            guard let cell = tableView.cellForRow(at: IndexPath(row: row, section: 0)) as? CalculationCell else {
+                return
+            }
+            if cell.reuseIdentifier != nil && cell.reuseIdentifier == "cell" {
+                if list[row].hour != nil {
+                    sumOfHours = sumOfHours + Double(list[row].hour!)!
+                }
+                sumOfPoints = sumOfPoints + Double(list[row].point)
+            }
+        }
+        let gpa = sumOfPoints / sumOfHours
+        print("Total Point: \(gpa)")
+    }
     
     
     
@@ -79,6 +98,9 @@ class CalculationViewController: UIViewController, UITableViewDelegate , UITable
         if indexPath.row == list.count {
             let cell = tableView.dequeueReusableCell(withIdentifier: "footer") as! CalculationCell
             cell.setFooter()
+            cell.tapForCalculate = {
+                self.calculateResult()
+            }
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CalculationCell
@@ -142,9 +164,10 @@ class CalculationViewController: UIViewController, UITableViewDelegate , UITable
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    func callBack(str: String) {
+    func callBack(str: String, point: Double) {
         if isGrade {
             list[self.indexPath!.row].grade = str
+            list[self.indexPath!.row].point = point
         } else {
             list[self.indexPath!.row].hour = str
         }

@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol CallBack {
-    func callBack(str: String)
+protocol ValueSelectionDelegate {
+    func callBack(str: String, point : Double)
 }
