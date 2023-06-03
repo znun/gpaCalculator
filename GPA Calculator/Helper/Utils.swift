@@ -21,7 +21,7 @@ extension UIViewController {
     }
 }
 
-struct GradePoints {
+struct AVG4 {
     static var A = 4.00
     static var A_M = 3.70
     static var B_P = 3.33
@@ -34,6 +34,21 @@ struct GradePoints {
     static var D = 1.00
     static var D_M = 0.70
     static var F = 0.59
+}
+
+struct AVG5 {
+    static var A = 5.00
+    static var A_M = 4.70
+    static var B_P = 4.50
+    static var B = 4.30
+    static var B_M = 4.00
+    static var C_P = 3.50
+    static var C = 3.30
+    static var C_M = 3.00
+    static var D_P = 2.50
+    static var D = 2.30
+    static var D_M = 2.00
+    static var F = 1.00
 }
 
 struct GradeIndicator {

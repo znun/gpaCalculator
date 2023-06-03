@@ -78,13 +78,45 @@ class CalculationViewController: UIViewController, UITableViewDelegate , UITable
                 if list[row].hour != nil {
                     sumOfHours = sumOfHours + Double(list[row].hour!)!
                 }
-                sumOfPoints = sumOfPoints + Double(list[row].point)
+                if list[row].grade != nil {
+                    sumOfPoints = sumOfPoints + Double(list[row].point)
+                } else {
+                    alert(message: "Please select grade for processing the calculation")
+                    return
+                }
+                if cell.nameTxt.text == nil || cell.nameTxt!.text != nil{
+                    alert(message: "Please Enter Subject Name for processing the calculation")
+                    return
+                }
+               
             }
         }
+        
+        print("HOURS = \(sumOfHours) & POINTS \(sumOfPoints)")
         let gpa = sumOfPoints / sumOfHours
+        //let actualGpaString;(format: "%.2f", gpa)
+        let message = "G.P.A. = \(gpa) \n This is the result"
+        alert(message: message)
         print("Total Point: \(gpa)")
     }
     
+    func alert(message: String){
+        let controller = UIAlertController(title: "There is an Error", message: message, preferredStyle: .alert)
+        controller.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { _ in
+            
+            //Cancel Action
+        }))
+        self.present(controller, animated: true, completion: nil)
+    }
+    
+    func result(message: String){
+        let controller = UIAlertController(title: "Result is Here", message: message, preferredStyle: .alert)
+        controller.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { _ in
+            
+            //Cancel Action
+        }))
+        self.present(controller, animated: true, completion: nil)
+    }
     
     
     //MARK: - TableView
@@ -128,6 +160,7 @@ class CalculationViewController: UIViewController, UITableViewDelegate , UITable
                 }
                 controller.delegate = self
                 controller.isGrade = self.isGrade
+                var avgType: Int = 4
                 self.navigationController?.pushViewController(controller, animated: true)
             }
             
@@ -144,6 +177,7 @@ class CalculationViewController: UIViewController, UITableViewDelegate , UITable
                 }
                 controller.delegate = self
                 controller.isGrade = self.isGrade
+                controller.avgType = self.avgType
                 self.navigationController?.pushViewController(controller, animated: true)
             }
             return cell
