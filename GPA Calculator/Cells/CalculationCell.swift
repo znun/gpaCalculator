@@ -15,7 +15,7 @@ class CalculationCell: UITableViewCell {
     @IBOutlet weak var gradeBtn: UIButton!
     @IBOutlet weak var plusBtn: UIButton!
     @IBOutlet weak var calculateBtn: UIButton!
-    
+    @IBOutlet weak var resultDes: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -81,6 +81,7 @@ class CalculationCell: UITableViewCell {
         if let tap = tapForCalculate {
             tap()
         }
+        
     }
     
 //    @IBAction func hourBtnPressed(_ sender: Any) {

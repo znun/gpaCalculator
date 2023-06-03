@@ -394,7 +394,7 @@
                                             <outlet property="plusBtn" destination="HC2-7B-Kjl" id="tzc-kd-x6W"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="footer" rowHeight="73" id="KTL-N2-cKH" customClass="CalculationCell" customModule="GPA_Calculator" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="calculation" rowHeight="73" id="KTL-N2-cKH" customClass="CalculationCell" customModule="GPA_Calculator" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="247" width="393" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KTL-N2-cKH" id="3v9-ce-pZz">
@@ -425,6 +425,33 @@
                                             <outlet property="calculateBtn" destination="zAf-V3-6fd" id="V0B-cL-cY2"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="footer" rowHeight="73" id="j3O-aN-QD3" customClass="CalculationCell" customModule="GPA_Calculator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="320" width="393" height="73"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="j3O-aN-QD3" id="hp2-br-RYn" customClass="CalculationCell" customModule="GPA_Calculator" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="73"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Y1-SV-Tqb">
+                                                    <rect key="frame" x="20" y="26" width="353" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="1Y1-SV-Tqb" firstAttribute="leading" secondItem="hp2-br-RYn" secondAttribute="leadingMargin" id="Bcp-ro-ol0"/>
+                                                <constraint firstItem="1Y1-SV-Tqb" firstAttribute="trailing" secondItem="hp2-br-RYn" secondAttribute="trailingMargin" id="FOj-M9-kp7"/>
+                                                <constraint firstItem="1Y1-SV-Tqb" firstAttribute="top" secondItem="hp2-br-RYn" secondAttribute="topMargin" constant="15" id="aH0-cJ-uLu"/>
+                                                <constraint firstItem="1Y1-SV-Tqb" firstAttribute="centerY" secondItem="hp2-br-RYn" secondAttribute="centerY" id="cvM-t3-Qm2"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="1Y1-SV-Tqb" secondAttribute="bottom" constant="15" id="qw5-e2-zuJ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="resultDes" destination="1Y1-SV-Tqb" id="x29-wE-eY7"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
@@ -448,7 +475,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hdb-3K-0S7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1506" y="763"/>
+            <point key="canvasLocation" x="1504.5801526717557" y="762.67605633802816"/>
         </scene>
         <!--Value Selection Controller-->
         <scene sceneID="Fjz-eA-FJa">

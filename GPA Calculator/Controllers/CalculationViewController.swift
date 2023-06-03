@@ -21,6 +21,8 @@ class CalculationViewController: UIViewController, UITableViewDelegate , UITable
     var indexPath: IndexPath?
     var list: [Grade] = [Grade]()
     
+    var resultString : String? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "New Stork"
@@ -84,7 +86,7 @@ class CalculationViewController: UIViewController, UITableViewDelegate , UITable
                     alert(message: "Please select grade for processing the calculation")
                     return
                 }
-                if cell.nameTxt.text == nil || cell.nameTxt!.text != nil{
+                if cell.nameTxt.text == nil || cell.nameTxt.text!.isEmpty{
                     alert(message: "Please Enter Subject Name for processing the calculation")
                     return
                 }
@@ -94,14 +96,16 @@ class CalculationViewController: UIViewController, UITableViewDelegate , UITable
         
         print("HOURS = \(sumOfHours) & POINTS \(sumOfPoints)")
         let gpa = sumOfPoints / sumOfHours
-        //let actualGpaString;(format: "%.2f", gpa)
-        let message = "G.P.A. = \(gpa) \n This is the result"
+        let actualGPA = String(format: "%.2f", gpa)
+        let message = "G.P.A. = \(actualGPA) \nThis is the result"
+        self.resultString = message
+        self.tableView.reloadData()
         alert(message: message)
         print("Total Point: \(gpa)")
     }
     
     func alert(message: String){
-        let controller = UIAlertController(title: "There is an Error", message: message, preferredStyle: .alert)
+        let controller = UIAlertController(title: "Result is here", message: message, preferredStyle: .alert)
         controller.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { _ in
             
             //Cancel Action
@@ -125,10 +129,24 @@ class CalculationViewController: UIViewController, UITableViewDelegate , UITable
         return list.count + 1
     }
     
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "footer") as! CalculationCell
+        cell.resultDes.text = resultString
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if resultString == nil {
+            return 0
+        }
+        return 100
+        
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == list.count {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "footer") as! CalculationCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "calculation") as! CalculationCell
             cell.setFooter()
             cell.tapForCalculate = {
                 self.calculateResult()
