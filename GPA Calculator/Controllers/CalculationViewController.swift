@@ -23,6 +23,8 @@ class CalculationViewController: UIViewController, UITableViewDelegate , UITable
     
     var resultString : String? = nil
     
+    let db = DBHelper()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "New Stork"
@@ -94,14 +96,17 @@ class CalculationViewController: UIViewController, UITableViewDelegate , UITable
             }
         }
         
-        print("HOURS = \(sumOfHours) & POINTS \(sumOfPoints)")
+//        print("HOURS = \(sumOfHours) & POINTS \(sumOfPoints)")
+        
         let gpa = sumOfPoints / sumOfHours
         let actualGPA = String(format: "%.2f", gpa)
         let message = "G.P.A. = \(actualGPA) \nThis is the result"
         self.resultString = message
         self.tableView.reloadData()
-        alert(message: message)
-        print("Total Point: \(gpa)")
+       // self.db.insert(name: , result: <#T##String#>, avg: <#T##Int#>, list: <#T##[Grade]#>)
+        
+//        alert(message: message)
+//        print("Total Point: \(gpa)")
     }
     
     func alert(message: String){

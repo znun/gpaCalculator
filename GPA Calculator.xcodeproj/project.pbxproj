@@ -21,6 +21,7 @@
 		CE99F5492A24A01300E3D675 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE99F5482A24A01300E3D675 /* Protocols.swift */; };
 		CE9FB7F92A22139B002FDBC1 /* CalculationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9FB7F82A22139B002FDBC1 /* CalculationViewController.swift */; };
 		CE9FB7FB2A2217A9002FDBC1 /* CalculationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9FB7FA2A2217A9002FDBC1 /* CalculationCell.swift */; };
+		CEC26ECF2A2B838E004C20A0 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC26ECE2A2B838E004C20A0 /* DBHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		CE99F5482A24A01300E3D675 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		CE9FB7F82A22139B002FDBC1 /* CalculationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationViewController.swift; sourceTree = "<group>"; };
 		CE9FB7FA2A2217A9002FDBC1 /* CalculationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationCell.swift; sourceTree = "<group>"; };
+		CEC26ECE2A2B838E004C20A0 /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			children = (
 				CE99F5422A24828400E3D675 /* Utils.swift */,
 				CE99F5482A24A01300E3D675 /* Protocols.swift */,
+				CEC26ECE2A2B838E004C20A0 /* DBHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				CE99F5432A24828400E3D675 /* Utils.swift in Sources */,
 				CE25A1C82A1BAD8D00D28191 /* AppDelegate.swift in Sources */,
 				CE25A1CA2A1BAD8D00D28191 /* SceneDelegate.swift in Sources */,
+				CEC26ECF2A2B838E004C20A0 /* DBHelper.swift in Sources */,
 				CE9FB7F92A22139B002FDBC1 /* CalculationViewController.swift in Sources */,
 				CE99F5472A24890100E3D675 /* Grade.swift in Sources */,
 				CE9FB7FB2A2217A9002FDBC1 /* CalculationCell.swift in Sources */,

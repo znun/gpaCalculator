@@ -253,23 +253,13 @@
                                                     <action selector="newStorkPressed:" destination="kjQ-FH-t7B" eventType="touchUpInside" id="iRv-3L-WbA"/>
                                                 </connections>
                                             </button>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yxE-FB-AIa">
-                                                <rect key="frame" x="30" y="100" width="333" height="100"/>
-                                                <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="100" id="SIh-e8-dic"/>
-                                                </constraints>
-                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="344" id="2iY-in-GE8"/>
-                                            <constraint firstItem="221-b2-KcZ" firstAttribute="top" secondItem="dS8-1E-iph" secondAttribute="top" constant="30" id="EKR-8k-ZNZ"/>
+                                            <constraint firstItem="221-b2-KcZ" firstAttribute="top" secondItem="dS8-1E-iph" secondAttribute="top" constant="30" id="8Ua-18-P83"/>
                                             <constraint firstAttribute="width" constant="393" id="dnB-Uv-fCm"/>
-                                            <constraint firstItem="yxE-FB-AIa" firstAttribute="top" secondItem="221-b2-KcZ" secondAttribute="bottom" constant="20" id="g7H-pa-5VB"/>
                                             <constraint firstAttribute="trailing" secondItem="221-b2-KcZ" secondAttribute="trailing" constant="30" id="jkn-Xc-3p1"/>
-                                            <constraint firstAttribute="trailing" secondItem="yxE-FB-AIa" secondAttribute="trailing" constant="30" id="pPd-5i-Ryn"/>
-                                            <constraint firstItem="yxE-FB-AIa" firstAttribute="leading" secondItem="dS8-1E-iph" secondAttribute="leading" constant="30" id="qt4-6G-hRf"/>
                                             <constraint firstItem="221-b2-KcZ" firstAttribute="leading" secondItem="dS8-1E-iph" secondAttribute="leading" constant="30" id="r2F-CK-Ghh"/>
                                         </constraints>
                                     </view>
@@ -318,7 +308,7 @@
                                     <fontDescription key="titleFontDescription" name="Verdana" family="Verdana" pointSize="20"/>
                                 </buttonConfiguration>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D5I-bk-qnz">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Semester Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D5I-bk-qnz">
                                 <rect key="frame" x="109" y="107" width="268" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="bdO-Or-PdM"/>
